@@ -1,0 +1,19 @@
+{
+  "name": "dbwrap",
+  "version": "1.0.0",
+  "description": "The world's worst database abstraction layer - just in case the others didn't suck enough",
+  "main": "lib/dbwrap",
+  "scripts": {
+    "test": "node tests/dbwrap"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/daplie/dbwrap.git"
+  },
+  "author": "AJ ONeal <coolaj86@gmail.com> (http://coolaj86.com/)",
+  "license": "Apache-2.0",
+  "homepage": "https://bitbucket.org/daplie/dbwrap#readme",
+  "dependencies": {
+    "bluebird": "^2.9.34"
+  }
+}
