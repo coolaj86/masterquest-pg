@@ -1,5 +1,5 @@
 {
-  "name": "masterquest-postgresql",
+  "name": "masterquest-pg",
   "version": "1.0.0",
   "description": "A NoSQL / PostgreSQL Hybrid. All your indices are belong to us. Master Quest.",
   "main": "lib/dbwrap",
@@ -8,11 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:coolaj86/node-masterquest-postgresql.git"
+    "url": "git@github.com:coolaj86/node-masterquest-pg.git"
   },
   "author": "AJ ONeal <coolaj86@gmail.com> (https://coolaj86.com/)",
   "license": "(MIT OR Apache-2.0)",
-  "homepage": "https://github.com/coolaj86/masterquest-postgresql",
+  "homepage": "https://github.com/coolaj86/masterquest-pg",
   "dependencies": {
     "bluebird": "^3.0.5",
     "pg-format": "^1.0.1"

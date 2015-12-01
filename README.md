@@ -1,4 +1,4 @@
-Master Quest SQLite3
+Master Quest PostgreSQL
 ============
 
 Master Quest is a brave new attempt at Data Mapping.
@@ -37,38 +37,41 @@ USAGE
 =====
 
 ```bash
-npm install --save 'https://github.com/coolaj86/node-masterquest-sqlite3.git'
+npm install --save 'https://github.com/coolaj86/node-masterquest-pg.git'
 ```
 
 ```javascript
 'use strict';
 
-// works with sqlite3, sqlcipher, and sqlite3-cluster
-var db = new (require('sqlite3').Database)('/tmp/data.sqlite3');
+var dbUrl = 'postgres://username:password@localhost:5432/database';
 
-require('masterquest-sqlite3').wrap(db, {
-  modelname: 'Persons'
-, indices: [ 'firstName', 'lastName' ]
-, hasMany: [ 'children' ]
-}).then(function (mq) {
+require('pg').connect(dbUrl, function (err, client, done) {
 
-  // update (or create) deterministic record
-  var john = {
-    id: 'john.doe@email.com'
-  , firstName: 'john'
-  , lastName: 'doe'
-  , dog: { name: 'ralph', color: 'gold' }
-  , children: [ 'stacey@email.com' ]
-  };
+  require('masterquest-pg').wrap(db, {
+    modelname: 'Persons'
+  , indices: [ 'firstName', 'lastName' ]
+  , hasMany: [ 'children' ]
+  }).then(function (mq) {
 
-  mq.Persons.upsert(john.id, john).then(function () {
-    // note: if `dog` existed, it will be overwritten, not merged
-    // note: `children` will be removed before save
+    // update (or create) deterministic record
+    var john = {
+      id: 'john.doe@email.com'
+    , firstName: 'john'
+    , lastName: 'doe'
+    , dog: { name: 'ralph', color: 'gold' }
+    , children: [ 'stacey@email.com' ]
+    };
 
-    mq.Persons.get('john.doe@email.com').then(function (data) {
-      // dog will be rehydrated from json
-      // children will not be fetched and attached
-      console.log(data);
+    mq.Persons.upsert(john.id, john).then(function () {
+      // note: if `dog` existed, it will be overwritten, not merged
+      // note: `children` will be removed before save
+
+      mq.Persons.get('john.doe@email.com').then(function (data) {
+        // dog will be rehydrated from json
+        // children will not be fetched and attached
+        console.log(data);
+      });
+
     });
 
   });
