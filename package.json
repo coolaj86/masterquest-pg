@@ -1,19 +1,20 @@
 {
-  "name": "dbwrap",
+  "name": "masterquest-postgresql",
   "version": "1.0.0",
-  "description": "The world's worst database abstraction layer - just in case the others didn't suck enough",
+  "description": "A NoSQL / PostgreSQL Hybrid. All your indices are belong to us. Master Quest.",
   "main": "lib/dbwrap",
   "scripts": {
     "test": "node tests/dbwrap"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/daplie/dbwrap.git"
+    "url": "git@github.com:coolaj86/node-masterquest-postgresql.git"
   },
-  "author": "AJ ONeal <coolaj86@gmail.com> (http://coolaj86.com/)",
-  "license": "Apache-2.0",
-  "homepage": "https://bitbucket.org/daplie/dbwrap#readme",
+  "author": "AJ ONeal <coolaj86@gmail.com> (https://coolaj86.com/)",
+  "license": "(MIT OR Apache-2.0)",
+  "homepage": "https://github.com/coolaj86/masterquest-postgresql",
   "dependencies": {
-    "bluebird": "^2.9.34"
+    "bluebird": "^3.0.5",
+    "pg-format": "^1.0.1"
   }
 }
