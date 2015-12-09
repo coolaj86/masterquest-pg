@@ -1,6 +1,6 @@
 {
   "name": "masterquest-pg",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A NoSQL / PostgreSQL Hybrid. All your indices are belong to us. Master Quest.",
   "main": "lib/dbwrap",
   "scripts": {
